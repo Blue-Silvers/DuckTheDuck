@@ -7,12 +7,13 @@ public class DialogueTrigger : MonoBehaviour
     public bool gameMaster, system;
     public string[] gameMasterDialogue, systemDialogue;
     public int imageForGM;
+    public float timeSpeaking;
 
     void Start()
     {
         if(gameMaster)
         {
-            DialogueSystem.instance.GameMasterTalking(gameMasterDialogue, imageForGM);
+            DialogueSystem.instance.GameMasterTalking(gameMasterDialogue, imageForGM, timeSpeaking);
         }
         else if (system)
         {
