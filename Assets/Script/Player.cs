@@ -9,9 +9,11 @@ public class Player : MonoBehaviour
     public bool sameSensitivity = true;
     public bool FOV = false;
 
-    //public enum float{0, 1, 2, 3};
-
     public Camera cam;
+
+    public GameObject inventory;
+    public Interactions inventoryInteractions;
+    public GameObject inventoryParent;
 
     private PlayerInput input;
     private InputAction move;
@@ -58,9 +60,24 @@ public class Player : MonoBehaviour
                     Debug.Log("Hit: " + hit.collider.name);
                     Debug.Log("Distance: " + hit.distance);
                     Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
-                    Debug.DrawLine(ray.origin, ray.direction * 10, Color.red, 5f);
+
+                    if (hit.collider.gameObject.GetComponent<Interactions>().canBeTaken != null && inventory == null)
+                    {
+                        inventory = hit.collider.gameObject;
+                        inventoryInteractions = hit.collider.gameObject.GetComponent<Interactions>();
+                        inventory.transform.localScale = Vector3.one * 0.5f;
+                    }
+                    else if (inventory != null)
+                    {
+                        inventoryInteractions.Interact(hit.collider.name);
+                    }
                 }
             }
+        }
+
+        if (inventory != null)
+        {
+            inventoryInteractions.InInventory(inventoryParent.transform.position, cam.transform.rotation);
         }
     }
 }
