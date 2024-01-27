@@ -11,13 +11,17 @@ public class DialogueTrigger : MonoBehaviour
 
     void Start()
     {
-        if(gameMaster)
+        if(gameMaster && !system)
         {
             DialogueSystem.instance.GameMasterTalking(gameMasterDialogue, imageForGM, timeSpeaking);
         }
-        else if (system)
+        else if (system && !gameMaster)
         {
             DialogueSystem.instance.SystemTalking(systemDialogue);
+        }
+        else if (gameMaster && system)
+        {
+            DialogueSystem.instance.BothTalking(gameMasterDialogue, systemDialogue, imageForGM, timeSpeaking);
         }
     }
         

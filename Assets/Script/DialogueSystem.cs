@@ -17,7 +17,7 @@ public class DialogueSystem : MonoBehaviour
     private float timeSpeaking;
     private string[] gmText, systemText;
     private int  indexSystem, indexGM;
-    private bool gmTalking, systemTalking;
+    private bool gmTalking, systemTalking, bothTalking;
 
     void Awake()
     {
@@ -42,6 +42,19 @@ public class DialogueSystem : MonoBehaviour
         {
             NextLine();
         }
+
+        if (bothTalking)
+        {
+            systemTalking = true;
+           while (systemTalking)
+           {
+                gmTalking = false;
+                bothTalking = true;
+           }
+           gmTalking = true;
+           bothTalking = false;
+
+        }
     }
 
     public void GameMasterTalking(string[] gameMasterDialogue, int image, float timeToSpeak)
@@ -57,17 +70,24 @@ public class DialogueSystem : MonoBehaviour
 
     public void SystemTalking(string[] systemDialogue)
     {
-        if (gmTalking)
-        {
-            gameMasterBox.GetComponent<Animator>().SetTrigger("Down");
-            gmTalking = false;
-        }
         systemDialogueBox.text = string.Empty;
         systemText = systemDialogue;
         systemTalking = true;
         systemBox.GetComponent<Animator>().SetTrigger("Up");
         StartCoroutine(Typing());
         
+    }
+
+    public void BothTalking(string[] gameMasterDialogue, string[] systemDialogue, int image, float timeToSpeak)
+    {
+        systemDialogueBox.text = string.Empty;
+        gmDialogueBox.text = string.Empty;
+        timeSpeaking = timeToSpeak;
+        gameMasterSprite.GetComponent<Image>().sprite = dialogueBoxes[image];
+        gmText = gameMasterDialogue;
+        systemText = systemDialogue;
+        bothTalking = true;
+
     }
 
     IEnumerator Typing()
