@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private float textSpeed, timeSpeaking;
     [SerializeField] private TextMeshProUGUI gmDialogueBox, systemDialogueBox;
     [SerializeField] private GameObject gameMasterBox, systemBox;
+    [SerializeField] private Image gameMasterSprite;
+    [SerializeField] private Sprite[] dialogueBoxes;
     private string[] gmText, systemText;
     public int  indexSystem, indexGM;
     private bool gmTalking, systemTalking;
@@ -40,9 +43,10 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void GameMasterTalking(string[] gameMasterDialogue)
+    public void GameMasterTalking(string[] gameMasterDialogue, int image)
     {
         gmDialogueBox.text = string.Empty;
+        gameMasterSprite.GetComponent<Image>().sprite = dialogueBoxes[image];
         gmText = gameMasterDialogue;
         gmTalking = true;
         gameMasterBox.GetComponent<Animator>().SetTrigger("Up");
