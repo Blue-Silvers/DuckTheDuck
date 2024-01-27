@@ -15,6 +15,15 @@ public class Interactions : MonoBehaviour
 
     public GameObject result;
 
+    private void Update()
+    {
+        if ( transform.position.y < -50)
+        {
+            GameObject LaF = GameObject.Find("LostAndFound");
+            transform.position = LaF.transform.position;
+        }
+    }
+
     public void InInventory(Vector3 position, Quaternion rotation)
     {
         if (canBeTaken == 1)
