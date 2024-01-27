@@ -1,38 +1,19 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    private static bool gameIsPaused = false;
 
-    public GameObject pauseMenuUI;
-    public GameObject settingsWindow;
-    public bool WindowOpen = false;
+    [Header("Windows")]
+    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject settingsWindow;
+    private bool WindowOpen = false;
 
-    void Update()
-    {
-        //utiliser NIS
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (WindowOpen == true)
-            {
-                settingsWindow.SetActive(false);
-                WindowOpen = false;
-            }
-            else
-            {
-                if (gameIsPaused)
-                {
-                    Resume();
-                }
-                else
-                {
-                    Paused();
-                }
-            }
-        }
-    }
+    [Header("Input Manager (don't touch)")]
+    [SerializeField] private InputActionReference escapeM;
 
     void Paused()
     {
@@ -72,4 +53,29 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    private void OnEnable()
+    {
+        escapeM.action.started += EscapeM;
+    }
+    private void EscapeM(InputAction.CallbackContext obj)
+    {
+        if (WindowOpen == true)
+        {
+            settingsWindow.SetActive(false);
+            WindowOpen = false;
+        }
+        else
+        {
+            if (gameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Paused();
+            }
+        }
+    }
 }
+

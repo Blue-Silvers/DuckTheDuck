@@ -6,18 +6,24 @@ using System.Linq;
 
 public class SettingsMenu : MonoBehaviour
 {
+    [Header("Audio")]
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider soundSlider;
 
+    [Header("Graphics")]
     [SerializeField] private TMPro.TMP_Dropdown DropdownGraphics;
     [SerializeField] private TMPro.TMP_Dropdown DropdownResolution;
 
     Resolution[] resolutions;
 
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider soundSlider;
+    [Header("Camera parameter")]
+    [SerializeField] private Camera cam;
+    [SerializeField] private Slider fovSlider;
 
     [SerializeField] private Toggle screenToggle;
 
+    [Header("Instance")]
     [SerializeField] private static SettingsMenu instance;
 
     private void Awake()
@@ -37,6 +43,9 @@ public class SettingsMenu : MonoBehaviour
 
         audioMixer.GetFloat("Sound", out float soundValueForSlider);
         soundSlider.value = soundValueForSlider;
+
+        fovSlider.value = cam.fieldOfView;
+
 
         //QualitySettings.GetActiveQualityLevelsForPlatform(out int qualityType);
 
@@ -65,6 +74,14 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreen = true;
     }
 
+    private void Update()
+    {
+        if(cam.fieldOfView == fovSlider.value)
+        {
+            cam.fieldOfView = fovSlider.value;
+        }
+
+    }
 
     public void SetVolume(float volume)
     {
