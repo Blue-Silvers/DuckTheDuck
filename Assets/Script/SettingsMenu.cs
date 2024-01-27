@@ -75,22 +75,15 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreen = true;
     }
 
-    private void Update()
-    {
-        if(funFOV == true)
-        {
-            cam.fieldOfView = 169;
-        }
-        else if(cam.fieldOfView == fovSlider.value)
-        {
-            cam.fieldOfView = fovSlider.value;
-        }
-
-    }
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Music", volume);
+    }
+
+    public void SetFov(float fov)
+    {
+        cam.fieldOfView = fov;
     }
 
     public void SetSoundVolume(float volume)
@@ -116,6 +109,13 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetFunMode(bool isFullScreen)
     {
-        funFOV = isFullScreen;
+        if (isFullScreen == true)
+        {
+            cam.fieldOfView = 169;
+        }
+        else
+        {
+            cam.fieldOfView = fovSlider.value;
+        }
     }
 }
