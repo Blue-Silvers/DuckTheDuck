@@ -1133,12 +1133,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88fbfc50251b2af4f9d858ad1f34703f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMaster: 1
-  system: 0
+  gameMaster: 0
+  system: 1
   gameMasterDialogue:
   - aaa
   - "\xE7a marche ?"
-  systemDialogue: []
+  systemDialogue:
+  - "et l\xE0 ??"
+  - Please
   imageForGM: 2
   timeSpeaking: 2
 --- !u!65 &2032149886
