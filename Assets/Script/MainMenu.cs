@@ -49,9 +49,6 @@ public class MainMenu : MonoBehaviour
     }
     private void EscapeM(InputAction.CallbackContext obj)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             settingsWindow.SetActive(false);
-        }
     }
 }

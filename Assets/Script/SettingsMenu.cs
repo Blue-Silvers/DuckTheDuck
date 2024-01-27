@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class SettingsMenu : MonoBehaviour
     [Header("Graphics")]
     [SerializeField] private TMPro.TMP_Dropdown DropdownGraphics;
     [SerializeField] private TMPro.TMP_Dropdown DropdownResolution;
+    [SerializeField] GameObject settingsWindow;
 
     Resolution[] resolutions;
 
@@ -22,6 +24,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Slider fovSlider;
     [SerializeField] private Toggle funMode;
     bool funFOV = false;
+    [SerializeField] TextMeshProUGUI fovTxt;
     [SerializeField] private Toggle screenToggle;
 
     [Header("Instance")]
@@ -46,7 +49,6 @@ public class SettingsMenu : MonoBehaviour
         soundSlider.value = soundValueForSlider;
 
         fovSlider.value = cam.fieldOfView;
-
 
         //QualitySettings.GetActiveQualityLevelsForPlatform(out int qualityType);
 
@@ -74,6 +76,13 @@ public class SettingsMenu : MonoBehaviour
 
         Screen.fullScreen = true;
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            settingsWindow.SetActive(false);
+        }
+    }
 
 
     public void SetVolume(float volume)
@@ -84,6 +93,7 @@ public class SettingsMenu : MonoBehaviour
     public void SetFov(float fov)
     {
         cam.fieldOfView = fov;
+        fovTxt.text = " " + (int) cam.fieldOfView;
     }
 
     public void SetSoundVolume(float volume)
@@ -93,6 +103,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetQuality (int qualityIndex)
     {
+        qualityIndex += 1;
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
