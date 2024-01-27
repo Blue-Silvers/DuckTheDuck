@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     private InputAction move;
     private InputAction moveCamera;
     private InputAction interaction;
+    private InputAction dropObject;
 
     private Rigidbody rb;
 
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
         move = input.actions.FindAction("Movement");
         interaction = input.actions.FindAction("Interaction");
         moveCamera = input.actions.FindAction("Camera");
+        dropObject = input.actions.FindAction("Inventory");
     }
 
     // Update is called once per frame
@@ -73,6 +76,12 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (dropObject.WasPressedThisFrame())
+        {
+            inventory.transform.localScale = Vector3.one;
+            inventory = null;
         }
 
         if (inventory != null)

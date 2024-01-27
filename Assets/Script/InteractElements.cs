@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class InteractionLibrary
 {
-    public static GameObject[] GOLibrary;
     public static void Remove(GameObject interactable)
     {
         GameObject.Destroy(interactable);

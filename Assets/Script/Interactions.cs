@@ -8,7 +8,7 @@ public class Interactions : MonoBehaviour
     [SerializeField, Range(0, 1)]
     public int canBeTaken;
 
-    public string interactWith = "none";
+    public GameObject interactWith;
 
     [SerializeField, Range(0, 1)]
     public int interactionType = 0; //0 = remove, 1 = combine 
@@ -26,7 +26,7 @@ public class Interactions : MonoBehaviour
 
     public void Interact(GameObject interaction)
     {
-        if (interactWith == interaction.name)
+        if (interactWith == interaction)
         {
             if (interactionType == 0)
             {
