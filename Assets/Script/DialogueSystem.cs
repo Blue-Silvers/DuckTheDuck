@@ -43,18 +43,6 @@ public class DialogueSystem : MonoBehaviour
             NextLine();
         }
 
-        if (bothTalking)
-        {
-            systemTalking = true;
-           while (systemTalking)
-           {
-                gmTalking = false;
-                bothTalking = true;
-           }
-           gmTalking = true;
-           bothTalking = false;
-
-        }
     }
 
     public void GameMasterTalking(string[] gameMasterDialogue, int image, float timeToSpeak)
@@ -78,17 +66,6 @@ public class DialogueSystem : MonoBehaviour
         
     }
 
-    public void BothTalking(string[] gameMasterDialogue, string[] systemDialogue, int image, float timeToSpeak)
-    {
-        systemDialogueBox.text = string.Empty;
-        gmDialogueBox.text = string.Empty;
-        timeSpeaking = timeToSpeak;
-        gameMasterSprite.GetComponent<Image>().sprite = dialogueBoxes[image];
-        gmText = gameMasterDialogue;
-        systemText = systemDialogue;
-        bothTalking = true;
-
-    }
 
     IEnumerator Typing()
     {

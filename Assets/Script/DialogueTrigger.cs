@@ -19,10 +19,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueSystem.instance.SystemTalking(systemDialogue);
         }
-        else if (gameMaster && system)
-        {
-            DialogueSystem.instance.BothTalking(gameMasterDialogue, systemDialogue, imageForGM, timeSpeaking);
-        }
+
     }
         
 }
