@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
 {
     [Header("PLAYER & CAMERA")]
     public float speed;
+<<<<<<< Updated upstream
+=======
+    public float strength;
+>>>>>>> Stashed changes
     public Camera cam;
     public Animator anim;
     public float xSensitivity = 1f;
@@ -66,6 +70,7 @@ public class Player : MonoBehaviour
                     Debug.Log("Hit: " + hit.collider.name);
                     Debug.Log("Distance: " + hit.distance);
                     Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
+<<<<<<< Updated upstream
 
                     if (hit.collider.gameObject.GetComponent<Interactions>().canBeTaken == 1&& inventory == null)
                     {
@@ -75,12 +80,22 @@ public class Player : MonoBehaviour
                         inventory.transform.localScale = Vector3.one * 0.5f;
                     }
                     else if (inventory != null)
+=======
+                    inventoryInteractions = hit.collider.gameObject.GetComponent<Interactions>();
+                    if (inventoryInteractions.canBeTaken == 1&& inventory == null)
+                    {
+                        inventory = hit.collider.gameObject;
+                        inventory.GetComponent<Collider>().enabled = false;
+                    }
+                    else
+>>>>>>> Stashed changes
                     {
                         inventoryInteractions.Interact(hit.collider.gameObject);
                     }
                 }
             }
         }
+<<<<<<< Updated upstream
 
         if (dropObject.WasPressedThisFrame())
         {
@@ -89,9 +104,23 @@ public class Player : MonoBehaviour
             inventory = null;
         }
 
+=======
+>>>>>>> Stashed changes
         if (inventory != null)
         {
             inventoryInteractions.InInventory(inventoryParent.transform.position, cam.transform.rotation);
         }
+<<<<<<< Updated upstream
+=======
+
+        if (dropObject.WasPressedThisFrame())
+        {
+            inventory.GetComponent<Collider>().enabled = true;
+            direction = cam.transform.forward;
+            Debug.Log(inventory.GetComponent<Rigidbody>().velocity = direction * strength);
+            inventory = null;
+        }
+
+>>>>>>> Stashed changes
     }
 }

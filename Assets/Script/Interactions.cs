@@ -10,10 +10,23 @@ public class Interactions : MonoBehaviour
 
     public GameObject interactWith;
 
+<<<<<<< Updated upstream
     [SerializeField, Range(0, 1)]
     public int interactionType = 0; //0 = remove, 1 = combine 
 
     public GameObject result;
+=======
+    [SerializeField, Range(0, 10)]
+    public int interactionType = 0; //0 = remove, 1 = combine , 2 = AnimationPlayer, 3 = ThrowingInteractions(animation), 
+
+    public GameObject result;
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+>>>>>>> Stashed changes
 
     private void Update()
     {
@@ -48,5 +61,12 @@ public class Interactions : MonoBehaviour
             }
             GameObject.Destroy(gameObject);
         }
+<<<<<<< Updated upstream
+=======
+        if (interactionType == 2)
+        {
+            InteractionLibrary.Animate(interaction, result);
+        }
+>>>>>>> Stashed changes
     }
 }
