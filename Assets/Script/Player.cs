@@ -4,14 +4,15 @@ using UnityEngine.InputSystem.HID;
 
 public class Player : MonoBehaviour
 {
+    [Header("PLAYER & CAMERA")]
     public float speed;
+    public Camera cam;
+    public Animator anim;
     public float xSensitivity = 1f;
     public float ySensitivity = 1f;
     public bool sameSensitivity = true;
-    public bool FOV = false;
 
-    public Camera cam;
-
+    [Header("INVENTORY (No Touch)")]
     public GameObject inventory;
     public Interactions inventoryInteractions;
     public GameObject inventoryParent;
@@ -45,11 +46,13 @@ public class Player : MonoBehaviour
 
         //Camera
         if (sameSensitivity) { ySensitivity = xSensitivity; }
-        if (FOV) { }
         float rotateHorizontal = Input.GetAxis("Mouse X");
         float rotateVertical = Input.GetAxis("Mouse Y");
         Vector3 rotation = new Vector3(rotateVertical * xSensitivity, -rotateHorizontal * ySensitivity, 0);
         cam.transform.eulerAngles -= rotation;
+
+        if (rb.velocity != Vector3.zero) { anim.SetBool("walking", true); }
+        else { anim.SetBool("walking", false); }
 
         // interaction
         if (interaction.WasPressedThisFrame())
@@ -67,6 +70,7 @@ public class Player : MonoBehaviour
                     if (hit.collider.gameObject.GetComponent<Interactions>().canBeTaken == 1&& inventory == null)
                     {
                         inventory = hit.collider.gameObject;
+                        inventory.GetComponent<Collider>().enabled = false;
                         inventoryInteractions = hit.collider.gameObject.GetComponent<Interactions>();
                         inventory.transform.localScale = Vector3.one * 0.5f;
                     }
@@ -80,6 +84,7 @@ public class Player : MonoBehaviour
 
         if (dropObject.WasPressedThisFrame())
         {
+            inventory.GetComponent<Collider>().enabled = true;
             inventory.transform.localScale = Vector3.one;
             inventory = null;
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactions : MonoBehaviour
 {
-    // Object is takable or not.
+    // Object is takeable or not.
     [SerializeField, Range(0, 1)]
     public int canBeTaken;
 
