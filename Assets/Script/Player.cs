@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
                     Debug.Log("Distance: " + hit.distance);
                     Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
 
-                    if (hit.collider.gameObject.GetComponent<Interactions>().canBeTaken != null && inventory == null)
+                    if (hit.collider.gameObject.GetComponent<Interactions>().canBeTaken == 1&& inventory == null)
                     {
                         inventory = hit.collider.gameObject;
                         inventoryInteractions = hit.collider.gameObject.GetComponent<Interactions>();
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
                     }
                     else if (inventory != null)
                     {
-                        inventoryInteractions.Interact(hit.collider.name);
+                        inventoryInteractions.Interact(hit.collider.gameObject);
                     }
                 }
             }

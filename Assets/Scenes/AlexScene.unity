@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 190427244}
   - component: {fileID: 190427243}
   - component: {fileID: 190427242}
+  - component: {fileID: 190427246}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -157,7 +158,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -230,6 +231,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 264745436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &190427246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190427241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd340d7b5baeb9745967b516e629a60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeTaken: 1
+  interactWith: none
+  interactionType: 0
+  result: {fileID: 0}
 --- !u!1 &196686316
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +290,7 @@ GameObject:
   - component: {fileID: 212059082}
   - component: {fileID: 212059081}
   - component: {fileID: 212059080}
+  - component: {fileID: 212059084}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -367,6 +385,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 264745436}
   m_LocalEulerAnglesHint: {x: 0, y: -161.979, z: 0}
+--- !u!114 &212059084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212059079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd340d7b5baeb9745967b516e629a60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeTaken: 1
+  interactWith: Cylinder
+  interactionType: 1
+  result: {fileID: 190427241}
 --- !u!1 &264745435
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeTaken: 0
   interactWith: 
+  interactionType: 0
+  result: {fileID: 0}
 --- !u!1 &1509710169
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,8 +998,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd340d7b5baeb9745967b516e629a60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeTaken: 1
+  canBeTaken: 0
   interactWith: Sphere
+  interactionType: 0
+  result: {fileID: 0}
 --- !u!1 &1597904973
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1014,7 @@ GameObject:
   - component: {fileID: 1597904976}
   - component: {fileID: 1597904975}
   - component: {fileID: 1597904974}
+  - component: {fileID: 1597904978}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1071,6 +1110,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 264745436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1597904978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597904973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd340d7b5baeb9745967b516e629a60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeTaken: 0
+  interactWith: none
+  interactionType: 0
+  result: {fileID: 0}
 --- !u!1 &1855456197
 GameObject:
   m_ObjectHideFlags: 0
