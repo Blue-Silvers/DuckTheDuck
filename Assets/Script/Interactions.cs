@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactions : MonoBehaviour
@@ -7,26 +5,19 @@ public class Interactions : MonoBehaviour
     // Object is takeable or not.
     [SerializeField, Range(0, 1)]
     public int canBeTaken;
+    public GameObject hasToInteractWith;
 
-    public GameObject interactWith;
-
-<<<<<<< Updated upstream
-    [SerializeField, Range(0, 1)]
-    public int interactionType = 0; //0 = remove, 1 = combine 
+    [SerializeField, Range(0, 5)]
+    public int interactionType = 0; //0 = remove, 1 = combine , 2 = AnimationPlayer, 
 
     public GameObject result;
-=======
-    [SerializeField, Range(0, 10)]
-    public int interactionType = 0; //0 = remove, 1 = combine , 2 = AnimationPlayer, 3 = ThrowingInteractions(animation), 
 
-    public GameObject result;
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
->>>>>>> Stashed changes
 
     private void Update()
     {
@@ -34,6 +25,8 @@ public class Interactions : MonoBehaviour
         {
             GameObject LaF = GameObject.Find("LostAndFound");
             transform.position = LaF.transform.position;
+            Debug.Log("Lost and Founded");
+            rb.velocity = (Vector3.zero);
         }
     }
 
@@ -48,25 +41,27 @@ public class Interactions : MonoBehaviour
 
     public void Interact(GameObject interaction)
     {
-        if (interactWith == interaction)
+        if (hasToInteractWith.name == interaction.name)
         {
             if (interactionType == 0)
             {
-                InteractionLibrary.Remove(interaction);
+                Debug.Log("Removing ");
+                InteractionLibrary.Remove(gameObject);
+                Interactions redo = interaction.GetComponent<Interactions>();
+                redo.Interact(redo.hasToInteractWith);
             }
-            if (interactionType == 1)
+            else if (interactionType == 1)
             {
+                Debug.Log("Combining ");
                 InteractionLibrary.Combine(result);
                 InteractionLibrary.Remove(interaction);
+                InteractionLibrary.Remove(gameObject);
             }
-            GameObject.Destroy(gameObject);
+            if (interactionType == 2)
+            {
+                Debug.Log("Animating ");
+                InteractionLibrary.Animate(interaction, result);
+            }
         }
-<<<<<<< Updated upstream
-=======
-        if (interactionType == 2)
-        {
-            InteractionLibrary.Animate(interaction, result);
-        }
->>>>>>> Stashed changes
     }
 }

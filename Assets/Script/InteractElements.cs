@@ -1,27 +1,25 @@
 using System;
-<<<<<<< Updated upstream
-=======
 using Unity.VisualScripting;
->>>>>>> Stashed changes
 using UnityEditor;
 using UnityEngine;
 
 public static class InteractionLibrary
 {
-    public static void Remove(GameObject interactable)
+    public static void Remove(GameObject obj)
     {
-        GameObject.Destroy(interactable);
+        Debug.Log("Destroying: " +  obj.name);
+        GameObject.Destroy(obj);
     }
     public static void Combine(GameObject combined)
     {
         Player player = GameObject.Find("Player").GetComponent<Player>();
-        player.inventory = combined;
-        player.inventoryInteractions = combined.GetComponent<Interactions>();
-        combined.transform.localScale = Vector3.one * 0.5f;
+        if (combined != null) 
+        {
+            player.inventory = combined;
+            player.inventoryInteractions = combined.GetComponent<Interactions>();
+        }
     }
 
-<<<<<<< Updated upstream
-=======
     public static void Animate(GameObject interactable, GameObject result)
     {
         Debug.Log("Play");
@@ -32,5 +30,5 @@ public static class InteractionLibrary
         result.GetComponent<Animation>().Play();
     }
 
->>>>>>> Stashed changes
+
 }

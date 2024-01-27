@@ -6,10 +6,7 @@ public class Player : MonoBehaviour
 {
     [Header("PLAYER & CAMERA")]
     public float speed;
-<<<<<<< Updated upstream
-=======
     public float strength;
->>>>>>> Stashed changes
     public Camera cam;
     public Animator anim;
     public float xSensitivity = 1f;
@@ -70,57 +67,35 @@ public class Player : MonoBehaviour
                     Debug.Log("Hit: " + hit.collider.name);
                     Debug.Log("Distance: " + hit.distance);
                     Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
-<<<<<<< Updated upstream
-
-                    if (hit.collider.gameObject.GetComponent<Interactions>().canBeTaken == 1&& inventory == null)
+                    
+                    if (hit.collider.gameObject.GetComponent<Interactions>() != null && inventory == null) 
                     {
                         inventory = hit.collider.gameObject;
-                        inventory.GetComponent<Collider>().enabled = false;
-                        inventoryInteractions = hit.collider.gameObject.GetComponent<Interactions>();
-                        inventory.transform.localScale = Vector3.one * 0.5f;
-                    }
-                    else if (inventory != null)
-=======
-                    inventoryInteractions = hit.collider.gameObject.GetComponent<Interactions>();
-                    if (inventoryInteractions.canBeTaken == 1&& inventory == null)
-                    {
-                        inventory = hit.collider.gameObject;
+                        inventoryInteractions = inventory.GetComponent<Interactions>();
                         inventory.GetComponent<Collider>().enabled = false;
                     }
                     else
->>>>>>> Stashed changes
                     {
                         inventoryInteractions.Interact(hit.collider.gameObject);
                     }
                 }
             }
         }
-<<<<<<< Updated upstream
-
-        if (dropObject.WasPressedThisFrame())
-        {
-            inventory.GetComponent<Collider>().enabled = true;
-            inventory.transform.localScale = Vector3.one;
-            inventory = null;
-        }
-
-=======
->>>>>>> Stashed changes
         if (inventory != null)
         {
             inventoryInteractions.InInventory(inventoryParent.transform.position, cam.transform.rotation);
         }
-<<<<<<< Updated upstream
-=======
 
         if (dropObject.WasPressedThisFrame())
         {
+            Debug.Log("Inventory Deleted");
             inventory.GetComponent<Collider>().enabled = true;
             direction = cam.transform.forward;
             Debug.Log(inventory.GetComponent<Rigidbody>().velocity = direction * strength);
             inventory = null;
+            inventoryInteractions = null;
         }
 
->>>>>>> Stashed changes
     }
+
 }
