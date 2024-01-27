@@ -5,15 +5,23 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static DialogueSystem instance;
+
     
-    [SerializeField] private string[] gmText, systemText;
     [SerializeField] private float textSpeed, timeSpeaking;
     [SerializeField] private TextMeshProUGUI gmDialogueBox, systemDialogueBox;
     [SerializeField] private GameObject gameMasterBox, systemBox;
-    private int  indexSystem;
-    public int nbLines, indexGM;
-    public bool activateGM, activateSystem;
-    private bool gmTalking, systemTalking, finishedTalking;
+    private string[] gmText, systemText;
+    public int  indexSystem, indexGM;
+    private bool gmTalking, systemTalking;
+
+    void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
@@ -25,37 +33,36 @@ public class DialogueSystem : MonoBehaviour
     void Update()
     {
 
-        if (activateGM)
-        {
-            gmDialogueBox.text = string.Empty;
-            gmTalking = true;
-            gameMasterBox.GetComponent<Animator>().SetTrigger("Up");
-            StartDialogue();
-            //StartCoroutine(GMTalking());
-            activateGM = false;
-        }
-
         //a changer pour le new input system
         if (systemTalking && Input.GetMouseButtonDown(0))
         {
-            if(systemDialogueBox.text == systemText[indexSystem])
-            {
-                NextLine();
-            }
+            NextLine();
         }
     }
 
-    void StartDialogue()
+    public void GameMasterTalking(string[] gameMasterDialogue)
     {
-        indexSystem = 0;
+        gmDialogueBox.text = string.Empty;
+        gmText = gameMasterDialogue;
+        gmTalking = true;
+        gameMasterBox.GetComponent<Animator>().SetTrigger("Up");
         StartCoroutine(Typing());
-
     }
 
-    // IEnumerator GMTalking()
-    // {
+    public void SystemTalking(string[] systemDialogue)
+    {
+        if (gmTalking)
+        {
+            gameMasterBox.GetComponent<Animator>().SetTrigger("Down");
+            gmTalking = false;
+        }
+        systemDialogueBox.text = string.Empty;
+        systemText = systemDialogue;
+        systemTalking = true;
+        systemBox.GetComponent<Animator>().SetTrigger("Up");
+        StartCoroutine(Typing());
         
-    // }
+    }
 
     IEnumerator Typing()
     {
@@ -84,7 +91,7 @@ public class DialogueSystem : MonoBehaviour
     {
         if (gmTalking )
         {
-            if (indexGM < nbLines -1)
+            if (indexGM < gmText.Length -1)
             {
                 indexGM++;
                 gmDialogueBox.text = string.Empty;
@@ -95,7 +102,6 @@ public class DialogueSystem : MonoBehaviour
                 indexGM++;
                 gmTalking = false;
                 gameMasterBox.GetComponent<Animator>().SetTrigger("Down");
-                //StartCoroutine(GMTalking());
             }
         }
         else if (systemTalking)
@@ -108,14 +114,10 @@ public class DialogueSystem : MonoBehaviour
             }
             else
             {
-                systemDialogueBox.text = "fin de texte";
+                systemBox.GetComponent<Animator>().SetTrigger("Down");
             }
         }
     }
 
-    void GameMasterTalking(string[] gameMasterDialogue, int numberLines)
-    {
-        gmText = gameMasterDialogue;
-        nbLines = numberLines;
-    }
+    
 }
