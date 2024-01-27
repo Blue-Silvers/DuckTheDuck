@@ -20,7 +20,8 @@ public class SettingsMenu : MonoBehaviour
     [Header("Camera parameter")]
     [SerializeField] private Camera cam;
     [SerializeField] private Slider fovSlider;
-
+    [SerializeField] private Toggle funMode;
+    bool funFOV = false;
     [SerializeField] private Toggle screenToggle;
 
     [Header("Instance")]
@@ -76,7 +77,11 @@ public class SettingsMenu : MonoBehaviour
 
     private void Update()
     {
-        if(cam.fieldOfView == fovSlider.value)
+        if(funFOV == true)
+        {
+            cam.fieldOfView = 169;
+        }
+        else if(cam.fieldOfView == fovSlider.value)
         {
             cam.fieldOfView = fovSlider.value;
         }
@@ -107,5 +112,10 @@ public class SettingsMenu : MonoBehaviour
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
+    }
+
+    public void SetFunMode(bool isFullScreen)
+    {
+        funFOV = isFullScreen;
     }
 }

@@ -11,9 +11,6 @@ public class MainMenu : MonoBehaviour
 
     [Header("Windows")]
     [SerializeField] private GameObject settingsWindow;
-    [SerializeField] private GameObject galleryWindow;
-    [SerializeField] private GameObject chapSelecWindow;
-
 
     [Header("Input Manager (don't touch)")]
     [SerializeField] private InputActionReference escapeM;
