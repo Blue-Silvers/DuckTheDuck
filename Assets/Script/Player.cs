@@ -1,8 +1,5 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -16,20 +13,29 @@ public class Player : MonoBehaviour
 
     public Camera cam;
 
+    private PlayerInput input;
+    private InputAction move;
+    private InputAction moveCamera;
+    private InputAction interaction;
+
     private Rigidbody rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        input = GetComponent<PlayerInput>();
+        move = input.actions.FindAction("Movement");
+        interaction = input.actions.FindAction("Interaction");
+        moveCamera = input.actions.FindAction("Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
         //Movement
-        float Up_Down = Input.GetAxis("Vertical");
-        float Left_Right = Input.GetAxis("Horizontal");
+        Vector2 movement = move.ReadValue<Vector2>();
 
-        Vector3 direction = (cam.transform.forward * Up_Down) + (cam.transform.right * Left_Right);
+        Vector3 direction = (cam.transform.forward * movement.y) + (cam.transform.right * movement.x);
         rb.velocity = direction * speed;
 
         //Camera
@@ -41,16 +47,19 @@ public class Player : MonoBehaviour
         cam.transform.eulerAngles -= rotation;
 
         // interaction
-        if (Input.GetKeyDown(KeyCode.E))
+        if (interaction.WasPressedThisFrame())
         {
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("Hit: " + hit.collider.name);
-                Debug.Log("Distance: " + hit.distance);
-                Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
-                Debug.DrawLine(ray.origin, ray.direction * 10, Color.red, 5f);
+                if (hit.distance < 2)
+                {
+                    Debug.Log("Hit: " + hit.collider.name);
+                    Debug.Log("Distance: " + hit.distance);
+                    Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
+                    Debug.DrawLine(ray.origin, ray.direction * 10, Color.red, 5f);
+                }
             }
         }
     }
