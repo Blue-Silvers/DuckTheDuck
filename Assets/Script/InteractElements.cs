@@ -13,11 +13,8 @@ public static class InteractionLibrary
     public static void Combine(GameObject combined)
     {
         Player player = GameObject.Find("Player").GetComponent<Player>();
-        if (combined != null) 
-        {
-            player.inventory = combined;
-            player.inventoryInteractions = combined.GetComponent<Interactions>();
-        }
+        player.inventory = combined;
+        player.inventoryInteractions = combined.GetComponent<Interactions>();
     }
 
     public static void Animate(GameObject interactable, GameObject result)
