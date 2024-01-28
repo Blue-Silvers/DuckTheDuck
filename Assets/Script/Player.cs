@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
         interaction = input.actions.FindAction("Interaction");
         moveCamera = input.actions.FindAction("Camera");
         dropObject = input.actions.FindAction("Inventory");
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -86,7 +88,7 @@ public class Player : MonoBehaviour
             inventoryInteractions.InInventory(inventoryParent.transform.position, cam.transform.rotation);
         }
 
-        if (dropObject.WasPressedThisFrame())
+        if (dropObject.WasPressedThisFrame() && inventory.name != "StartingObject")
         {
             Debug.Log("Inventory Deleted");
             inventory.GetComponent<Collider>().enabled = true;
@@ -95,6 +97,9 @@ public class Player : MonoBehaviour
             inventory = null;
             inventoryInteractions = null;
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+            Cursor.lockState = CursorLockMode.None;
 
     }
 
