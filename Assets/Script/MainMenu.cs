@@ -1,5 +1,6 @@
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,8 @@ public class MainMenu : MonoBehaviour
 
     [Header("Windows")]
     [SerializeField] private GameObject settingsWindow;
+    [SerializeField] private EventSystem eventSystem;
+    [SerializeField] private GameObject ngButton, settingsButton;
 
     [Header("Input Manager (don't touch)")]
     [SerializeField] private InputActionReference escapeM;
@@ -25,12 +28,14 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsButton()
     {
-         settingsWindow.SetActive(true);
+        settingsWindow.SetActive(true);
+        eventSystem.SetSelectedGameObject(settingsButton);
     }
 
     public void CloseSettingsButton()
     {
         settingsWindow.SetActive(false);
+        eventSystem.SetSelectedGameObject(ngButton);
     }
 
     public void Credit()
@@ -49,6 +54,7 @@ public class MainMenu : MonoBehaviour
     }
     private void EscapeM(InputAction.CallbackContext obj)
     {
-            settingsWindow.SetActive(false);
+        settingsWindow.SetActive(false);
+        eventSystem.SetSelectedGameObject(ngButton);
     }
 }
