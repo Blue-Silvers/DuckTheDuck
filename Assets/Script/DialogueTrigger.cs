@@ -9,7 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     public int imageForGM;
     public float timeSpeaking;
 
-    void Start()
+    public void Trigger()
     {
         if(gameMaster && !system)
         {

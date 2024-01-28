@@ -7,10 +7,11 @@ public class Interactions : MonoBehaviour
     public int canBeTaken;
     public GameObject hasToInteractWith;
 
-    [SerializeField, Range(0, 5)]
-    public int interactionType = 0; //0 = remove, 1 = combine , 2 = AnimationPlayer, 
+    [SerializeField, Range(0, 3)]
+    public int interactionType = 0; //0 = remove, 1 = combine , 2 = AnimationPlayer, 3 = animation + particles
 
     public GameObject result;
+    public ParticleSystem particles;
 
     private Rigidbody rb;
 
@@ -57,10 +58,17 @@ public class Interactions : MonoBehaviour
                 InteractionLibrary.Remove(interaction);
                 InteractionLibrary.Remove(gameObject);
             }
-            if (interactionType == 2)
+            else if (interactionType == 2)
             {
                 Debug.Log("Animating ");
                 InteractionLibrary.Animate(interaction, result);
+            }
+            else if (interactionType == 3)
+            {
+                Debug.Log("PARTICLES ");
+                particles.Play();
+                interactionType = 2;
+                Interact(interaction);
             }
         }
     }
