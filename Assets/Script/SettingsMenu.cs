@@ -49,6 +49,7 @@ public class SettingsMenu : MonoBehaviour
         soundSlider.value = soundValueForSlider;
 
         fovSlider.value = cam.fieldOfView;
+        fovTxt.text = " " + (int)cam.fieldOfView;
 
         //QualitySettings.GetActiveQualityLevelsForPlatform(out int qualityType);
 
@@ -92,8 +93,13 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetFov(float fov)
     {
-        cam.fieldOfView = fov;
-        fovTxt.text = " " + (int) cam.fieldOfView;
+        if(funFOV == false)
+        {
+            cam.fieldOfView = fov;
+        }
+
+        fovTxt.text = " " + (int) fov;
+
     }
 
     public void SetSoundVolume(float volume)
@@ -103,7 +109,6 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetQuality (int qualityIndex)
     {
-        qualityIndex += 1;
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
@@ -123,10 +128,12 @@ public class SettingsMenu : MonoBehaviour
         if (isFullScreen == true)
         {
             cam.fieldOfView = 169;
+            funFOV = true;
         }
         else
         {
             cam.fieldOfView = fovSlider.value;
+            funFOV = false;
         }
     }
 }
