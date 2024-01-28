@@ -61,7 +61,9 @@ public class Player : MonoBehaviour
         if (sameSensitivity) { ySensitivity = xSensitivity; }
         float rotateHorizontal = Input.GetAxis("Mouse X");
         float rotateVertical = Input.GetAxis("Mouse Y");
-        Vector3 rotation = new Vector3(rotateVertical * xSensitivity, -rotateHorizontal * ySensitivity, 0);
+        Vector3 rotation = moveCamera.ReadValue<Vector3>();
+        Debug.Log(moveCamera.ReadValue<Vector3>());
+        //Vector3 rotation = new Vector3(rotateVertical * xSensitivity, -rotateHorizontal * ySensitivity, 0);
         cam.transform.eulerAngles -= rotation;
         playerRenderer.transform.eulerAngles -= new Vector3(0, -rotateHorizontal * ySensitivity, 0);;
 
