@@ -2264,6 +2264,7 @@ MonoBehaviour:
   hasToInteractWith: {fileID: 1890798550}
   interactionType: 0
   result: {fileID: 0}
+  particles: {fileID: 0}
 --- !u!1001 &170400102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34963,6 +34964,7 @@ MonoBehaviour:
   hasToInteractWith: {fileID: 0}
   interactionType: 0
   result: {fileID: 0}
+  particles: {fileID: 0}
 --- !u!54 &1249078530
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55051,6 +55053,7 @@ MonoBehaviour:
   hasToInteractWith: {fileID: 2019662037}
   interactionType: 2
   result: {fileID: 1890798550}
+  particles: {fileID: 0}
 --- !u!65 &1890798554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55497,7 +55500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077270402172889109, guid: 2e5dbd861b8dfd14fa9d2a7efbd61420, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.416
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 4077270402172889109, guid: 2e5dbd861b8dfd14fa9d2a7efbd61420, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63020,6 +63023,7 @@ MonoBehaviour:
   hasToInteractWith: {fileID: 0}
   interactionType: 0
   result: {fileID: 0}
+  particles: {fileID: 0}
 --- !u!54 &2146193835
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float strength;
     public Camera cam;
     public Animator anim;
+    public GameObject playerRenderer;
     public float xSensitivity = 1f;
     public float ySensitivity = 1f;
     public bool sameSensitivity = true;
@@ -47,12 +48,22 @@ public class Player : MonoBehaviour
         Vector3 direction = (cam.transform.forward * movement.y) + (cam.transform.right * movement.x);
         rb.velocity = direction * speed;
 
+        //anim
+        if (movement != new Vector2(0,0))
+        {
+            playerRenderer.GetComponent<Animator>().SetBool("Walking", true);
+        }
+        else
+        {
+            playerRenderer.GetComponent<Animator>().SetBool("Walking", false);
+        }
         //Camera
         if (sameSensitivity) { ySensitivity = xSensitivity; }
         float rotateHorizontal = Input.GetAxis("Mouse X");
         float rotateVertical = Input.GetAxis("Mouse Y");
         Vector3 rotation = new Vector3(rotateVertical * xSensitivity, -rotateHorizontal * ySensitivity, 0);
         cam.transform.eulerAngles -= rotation;
+        playerRenderer.transform.eulerAngles -= new Vector3(0, -rotateHorizontal * ySensitivity, 0);;
 
         if (rb.velocity != Vector3.zero) { anim.SetBool("walking", true); }
         else { anim.SetBool("walking", false); }
@@ -60,18 +71,30 @@ public class Player : MonoBehaviour
         // interaction
         if (interaction.WasPressedThisFrame())
         {
+            
             Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.distance < 2)
                 {
+                   
                     Debug.Log("Hit: " + hit.collider.name);
                     Debug.Log("Distance: " + hit.distance);
                     Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
                     Interactions newInteraction = hit.collider.gameObject.GetComponent<Interactions>();
                     if (newInteraction != null && newInteraction.canBeTaken == 1&& inventory == null) 
                     {
+                         playerRenderer.GetComponent<Animator>().SetTrigger("PunchHold");
+                        if (movement != new Vector2(0,0))
+                        {
+                            playerRenderer.GetComponent<Animator>().SetBool("WalkingHold", true);
+                        }
+                        else
+                        {
+                            playerRenderer.GetComponent<Animator>().SetBool("WalkingHold", false);
+                        }
+                        
                         inventory = hit.collider.gameObject;
                         inventoryInteractions = inventory.GetComponent<Interactions>();
                         inventory.GetComponent<Collider>().enabled = false;
@@ -81,11 +104,20 @@ public class Player : MonoBehaviour
                         inventoryInteractions.Interact(newInteraction.gameObject);
                     }
                 }
+                else 
+                {
+                    playerRenderer.GetComponent<Animator>().SetTrigger("Punch");
+                }
             }
         }
         if (inventory != null)
         {
+            playerRenderer.GetComponent<Animator>().SetBool("Item", true);
             inventoryInteractions.InInventory(inventoryParent.transform.position, cam.transform.rotation);
+        }
+        else
+        {
+            playerRenderer.GetComponent<Animator>().SetBool("Item", false);
         }
 
         if (dropObject.WasPressedThisFrame() && inventory.name != "StartingObject")
