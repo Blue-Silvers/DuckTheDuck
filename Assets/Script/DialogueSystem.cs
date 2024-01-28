@@ -47,6 +47,8 @@ public class DialogueSystem : MonoBehaviour
 
     public void GameMasterTalking(string[] gameMasterDialogue, int image, float timeToSpeak)
     {
+        StopAllCoroutines();
+        indexGM = 0;
         gmDialogueBox.text = string.Empty;
         timeSpeaking = timeToSpeak;
         gameMasterSprite.GetComponent<Image>().sprite = dialogueBoxes[image];
@@ -58,6 +60,8 @@ public class DialogueSystem : MonoBehaviour
 
     public void SystemTalking(string[] systemDialogue)
     {
+        StopAllCoroutines();
+        indexSystem = 0;
         systemDialogueBox.text = string.Empty;
         systemText = systemDialogue;
         systemTalking = true;
