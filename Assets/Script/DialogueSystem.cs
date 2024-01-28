@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem instance;
 
     
-    [SerializeField] private float textSpeed, timeSpeaking;
+    [SerializeField] private float textSpeed;
     [SerializeField] private TextMeshProUGUI gmDialogueBox, systemDialogueBox;
     [SerializeField] private GameObject gameMasterBox, systemBox;
+    [SerializeField] private Image gameMasterSprite;
+    [SerializeField] private Sprite[] dialogueBoxes;
+    private float timeSpeaking;
     private string[] gmText, systemText;
-    public int  indexSystem, indexGM;
-    private bool gmTalking, systemTalking;
+    private int  indexSystem, indexGM;
+    private bool gmTalking, systemTalking, bothTalking;
 
     void Awake()
     {
@@ -38,11 +42,16 @@ public class DialogueSystem : MonoBehaviour
         {
             NextLine();
         }
+
     }
 
-    public void GameMasterTalking(string[] gameMasterDialogue)
+    public void GameMasterTalking(string[] gameMasterDialogue, int image, float timeToSpeak)
     {
+        StopAllCoroutines();
+        indexGM = 0;
         gmDialogueBox.text = string.Empty;
+        timeSpeaking = timeToSpeak;
+        gameMasterSprite.GetComponent<Image>().sprite = dialogueBoxes[image];
         gmText = gameMasterDialogue;
         gmTalking = true;
         gameMasterBox.GetComponent<Animator>().SetTrigger("Up");
@@ -51,11 +60,8 @@ public class DialogueSystem : MonoBehaviour
 
     public void SystemTalking(string[] systemDialogue)
     {
-        if (gmTalking)
-        {
-            gameMasterBox.GetComponent<Animator>().SetTrigger("Down");
-            gmTalking = false;
-        }
+        StopAllCoroutines();
+        indexSystem = 0;
         systemDialogueBox.text = string.Empty;
         systemText = systemDialogue;
         systemTalking = true;
@@ -63,6 +69,7 @@ public class DialogueSystem : MonoBehaviour
         StartCoroutine(Typing());
         
     }
+
 
     IEnumerator Typing()
     {
