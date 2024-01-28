@@ -243,7 +243,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653765
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &1849800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39870739}
   - component: {fileID: 39870741}
+  - component: {fileID: 39870740}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -595,6 +595,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1578585465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!81 &39870740
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39870738}
+  m_Enabled: 1
 --- !u!20 &39870741
 Camera:
   m_ObjectHideFlags: 0
@@ -1937,7 +1945,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653782
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &145101147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,8 +2261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTaken: 1
-  interactionType: 0
   hasToInteractWith: {fileID: 1890798550}
+  interactionType: 0
   result: {fileID: 0}
   particles: {fileID: 0}
 --- !u!1001 &170400102
@@ -4493,7 +4500,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653844
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &274571196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5296,7 +5302,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653769
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &325983572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6504,7 +6509,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653789
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &338872106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9138,7 +9142,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653767
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &477807537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9649,7 +9652,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653857
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &515221359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12311,7 +12313,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653710
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &596255872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13651,7 +13652,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653857
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &665961009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17349,7 +17349,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653754
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &779068681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18656,7 +18655,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653764
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &844819575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19176,7 +19174,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653731
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &853024868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33308,7 +33305,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653857
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &1180397121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34965,8 +34961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTaken: 1
-  interactionType: 0
   hasToInteractWith: {fileID: 0}
+  interactionType: 0
   result: {fileID: 0}
   particles: {fileID: 0}
 --- !u!54 &1249078530
@@ -45035,7 +45031,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653766
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &1557240949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48568,7 +48563,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653788
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &1721773878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50542,7 +50536,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741189
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &1805470191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54687,7 +54680,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653706
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &1870903469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55058,9 +55050,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTaken: 0
+  hasToInteractWith: {fileID: 2019662037}
   interactionType: 2
-  hasToInteractWith: {fileID: 1890798550}
-  result: {fileID: 2019662037}
+  result: {fileID: 1890798550}
   particles: {fileID: 0}
 --- !u!65 &1890798554
 BoxCollider:
@@ -55092,9 +55084,9 @@ Animation:
   m_GameObject: {fileID: 1890798550}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: eeac79627a56fd34a83134bd1d55fe4a, type: 2}
+  m_Animation: {fileID: 7400000, guid: c855af03d59c9164cbbe050b9def253c, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: eeac79627a56fd34a83134bd1d55fe4a, type: 2}
+  - {fileID: 7400000, guid: c855af03d59c9164cbbe050b9def253c, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -55504,15 +55496,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077270402172889109, guid: 2e5dbd861b8dfd14fa9d2a7efbd61420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.39
+      value: 0.675
       objectReference: {fileID: 0}
     - target: {fileID: 4077270402172889109, guid: 2e5dbd861b8dfd14fa9d2a7efbd61420, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.416
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 4077270402172889109, guid: 2e5dbd861b8dfd14fa9d2a7efbd61420, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.32
+      value: -3.2199545
       objectReference: {fileID: 0}
     - target: {fileID: 4077270402172889109, guid: 2e5dbd861b8dfd14fa9d2a7efbd61420, type: 3}
       propertyPath: m_LocalRotation.w
@@ -57186,7 +57178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e6bfba02c612b9643b77276dac01a0f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 89.453
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e6bfba02c612b9643b77276dac01a0f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -57210,38 +57202,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6bfba02c612b9643b77276dac01a0f6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2019662044}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6bfba02c612b9643b77276dac01a0f6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2019662045}
+      addedObject: {fileID: 2019662041}
   m_SourcePrefab: {fileID: 100100000, guid: e6bfba02c612b9643b77276dac01a0f6, type: 3}
 --- !u!1 &2019662037 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e6bfba02c612b9643b77276dac01a0f6, type: 3}
   m_PrefabInstance: {fileID: 2019662036}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2019662044
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019662037}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0070679295, y: 0.0591009, z: 0.026220929}
-  m_Center: {x: -0.0035339633, y: 0.02955045, z: -0.013242206}
---- !u!111 &2019662045
+--- !u!111 &2019662041
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58030,7 +57998,6 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653784
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
 --- !u!114 &2049869364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63053,8 +63020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTaken: 1
-  interactionType: 0
   hasToInteractWith: {fileID: 0}
+  interactionType: 0
   result: {fileID: 0}
   particles: {fileID: 0}
 --- !u!54 &2146193835
