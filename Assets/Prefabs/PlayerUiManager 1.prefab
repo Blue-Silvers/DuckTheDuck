@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4333e42fd6930d84e800ab9b7b45f20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToEscape: 20
+  timeToEscape: 600
   timerTxt: {fileID: 6831448553536468637}
   gameOverScreen: {fileID: 3547499278617459110}
   outTxt: {fileID: 5716817937975434930}
@@ -2490,6 +2490,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543314580228432314, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543314580228432314, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543314580228432314, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
@@ -2513,6 +2521,14 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 3022016991619960988}
+    - target: {fileID: 5708980687518534882, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708980687518534882, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 5708980687518534882, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4

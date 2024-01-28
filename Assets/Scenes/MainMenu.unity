@@ -2930,7 +2930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5543314580228432314, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
       propertyPath: m_MaxValue
-      value: 80
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543314580228432314, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
+      propertyPath: m_MinValue
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 5543314580228432314, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
       propertyPath: m_Direction
@@ -2970,7 +2974,11 @@ PrefabInstance:
       objectReference: {fileID: 197495393}
     - target: {fileID: 5708980687518534882, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
       propertyPath: m_MaxValue
-      value: 80
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708980687518534882, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
+      propertyPath: m_MinValue
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 5708980687518534882, guid: a7fa4369dc203e04aa01028fab91725e, type: 3}
       propertyPath: m_Navigation.m_Mode
