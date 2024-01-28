@@ -55,9 +55,9 @@ public class Interactions : MonoBehaviour
             else if (interactionType == 1)
             {
                 Debug.Log("Combining ");
-                InteractionLibrary.Combine(result);
                 InteractionLibrary.Remove(interaction);
                 InteractionLibrary.Remove(gameObject);
+                InteractionLibrary.Combine(result);
             }
             else if (interactionType == 2)
             {
