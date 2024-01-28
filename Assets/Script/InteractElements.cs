@@ -22,7 +22,7 @@ public static class InteractionLibrary
 
     public static void Animate(GameObject interactable, GameObject result)
     {
-        Debug.Log("Play");
+        Debug.Log("Animate: " + interactable.name + " and " + result.name);
         if (interactable != null) 
         { 
             interactable.GetComponent<Animation>().Play();
