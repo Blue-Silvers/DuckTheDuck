@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
         interaction = input.actions.FindAction("Interaction");
         moveCamera = input.actions.FindAction("Camera");
         dropObject = input.actions.FindAction("Inventory");
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -67,8 +69,8 @@ public class Player : MonoBehaviour
                     Debug.Log("Hit: " + hit.collider.name);
                     Debug.Log("Distance: " + hit.distance);
                     Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
-                    
-                    if (hit.collider.gameObject.GetComponent<Interactions>() != null && inventory == null) 
+                    Interactions newInteraction = hit.collider.gameObject.GetComponent<Interactions>();
+                    if (newInteraction != null && newInteraction.canBeTaken == 1&& inventory == null) 
                     {
                         inventory = hit.collider.gameObject;
                         inventoryInteractions = inventory.GetComponent<Interactions>();
@@ -76,7 +78,7 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        inventoryInteractions.Interact(hit.collider.gameObject);
+                        inventoryInteractions.Interact(newInteraction.gameObject);
                     }
                 }
             }
@@ -86,7 +88,7 @@ public class Player : MonoBehaviour
             inventoryInteractions.InInventory(inventoryParent.transform.position, cam.transform.rotation);
         }
 
-        if (dropObject.WasPressedThisFrame())
+        if (dropObject.WasPressedThisFrame() && inventory.name != "StartingObject")
         {
             Debug.Log("Inventory Deleted");
             inventory.GetComponent<Collider>().enabled = true;
@@ -95,6 +97,9 @@ public class Player : MonoBehaviour
             inventory = null;
             inventoryInteractions = null;
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+            Cursor.lockState = CursorLockMode.None;
 
     }
 
