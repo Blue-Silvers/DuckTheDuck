@@ -4071,18 +4071,30 @@ PrefabInstance:
     - {fileID: -4942425426695745729, guid: 9f51e893b0477744d998d050330d678f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f51e893b0477744d998d050330d678f, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1037111322}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f51e893b0477744d998d050330d678f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 774770015}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f51e893b0477744d998d050330d678f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 24414926}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f51e893b0477744d998d050330d678f, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -7609145667655734672, guid: 9f51e893b0477744d998d050330d678f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 24414925}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f51e893b0477744d998d050330d678f, type: 3}
+      addedObject: {fileID: 200562776}
+    - targetCorrespondingSourceObject: {fileID: -7609145667655734672, guid: 9f51e893b0477744d998d050330d678f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 24414924}
+      addedObject: {fileID: 200562775}
+    - targetCorrespondingSourceObject: {fileID: -7609145667655734672, guid: 9f51e893b0477744d998d050330d678f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 200562774}
+    - targetCorrespondingSourceObject: {fileID: -7609145667655734672, guid: 9f51e893b0477744d998d050330d678f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 200562773}
+    - targetCorrespondingSourceObject: {fileID: -7609145667655734672, guid: 9f51e893b0477744d998d050330d678f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 200562777}
   m_SourcePrefab: {fileID: 100100000, guid: 9f51e893b0477744d998d050330d678f, type: 3}
 --- !u!4 &24414922 stripped
 Transform:
@@ -4094,44 +4106,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f51e893b0477744d998d050330d678f, type: 3}
   m_PrefabInstance: {fileID: 24414921}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &24414924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24414923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd340d7b5baeb9745967b516e629a60d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBeTaken: 0
-  interactionType: 0
-  hasToInteractWith: {fileID: 0}
-  result: {fileID: 0}
-  particles: {fileID: 0}
---- !u!65 &24414925
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24414923}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.047838513, y: 0.016676998, z: 0.02360536}
-  m_Center: {x: -0.0003820196, y: 0.0033384978, z: 0.00018220508}
 --- !u!111 &24414926
 Animation:
   m_ObjectHideFlags: 0
@@ -4142,9 +4116,10 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 5dbc0b9fd15f60a4db8ba19d19020b4f, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 5dbc0b9fd15f60a4db8ba19d19020b4f, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!43 &25162715
@@ -6249,6 +6224,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &101698840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6843,6 +6819,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &111121776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7390,6 +7367,112 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &135033997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 135033998}
+  - component: {fileID: 135034001}
+  - component: {fileID: 135034000}
+  - component: {fileID: 135033999}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &135033998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135033997}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27679262, y: -0.8620828, z: 0}
+  m_LocalScale: {x: 0.22758217, y: 0.94045234, z: 0.36772344}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 818195916}
+  m_Father: {fileID: 1037111322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &135033999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135033997}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &135034000
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135033997}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7c998f05b4293b541b63cba2790678e0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &135034001
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135033997}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &149397119
 GameObject:
   m_ObjectHideFlags: 0
@@ -7528,6 +7611,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653705
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &149397126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8037,7 +8121,7 @@ Transform:
   m_GameObject: {fileID: 176512906}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.00000026822087, w: 1}
-  m_LocalPosition: {x: 0.0319, y: 0.0114, z: -0.0457}
+  m_LocalPosition: {x: 0.023, y: 0.011, z: -0.026}
   m_LocalScale: {x: 0.19999997, y: 0.19999997, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8285,6 +8369,112 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b85db67324a057c4b8f01b9616d6482a, type: 3}
   m_PrefabInstance: {fileID: 198305518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &200562769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7609145667655734672, guid: 9f51e893b0477744d998d050330d678f, type: 3}
+  m_PrefabInstance: {fileID: 24414921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &200562773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200562769}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010229805, y: 0.010328167, z: 0.010504016}
+  m_Center: {x: 0.000000007471503, y: -0.008752277, z: -0.000000014605459}
+--- !u!65 &200562774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200562769}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0012650638, y: 0.016239876, z: 0.010504016}
+  m_Center: {x: -0.00448236, y: 0.0031199378, z: -0.000000014605483}
+--- !u!65 &200562775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200562769}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0006448048, y: 0.016239876, z: 0.010504016}
+  m_Center: {x: 0.004792506, y: 0.0031199378, z: -0.000000014605439}
+--- !u!65 &200562776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200562769}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010657518, y: 0.016239876, z: 0.0021322782}
+  m_Center: {x: -0.000045744968, y: 0.0031199378, z: -0.005550963}
+--- !u!114 &200562777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200562769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd340d7b5baeb9745967b516e629a60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeTaken: 0
+  interactionType: 2
+  hasToInteractWith: {fileID: 24414923}
+  result: {fileID: 24414923}
+  particles: {fileID: 0}
 --- !u!1 &211860643
 GameObject:
   m_ObjectHideFlags: 0
@@ -15955,6 +16145,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &434486311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17925,6 +18116,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322874602946563
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &547678346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21356,6 +21548,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &601909503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22028,6 +22221,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &639363981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22504,6 +22698,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653789
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &695763210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22870,7 +23065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeTaken: 1
   interactionType: 0
-  hasToInteractWith: {fileID: 24414923}
+  hasToInteractWith: {fileID: 200562769}
   result: {fileID: 0}
   particles: {fileID: 0}
 --- !u!65 &723266684
@@ -23781,7 +23976,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0d6b0867e9c47024dadeb3ca07f8aa93, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba0d716aa2d834a4ea6dc0236cfb30db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1099782753}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ba0d716aa2d834a4ea6dc0236cfb30db, type: 3}
       insertIndex: -1
@@ -23865,7 +24063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeTaken: 1
   interactionType: 0
-  hasToInteractWith: {fileID: 0}
+  hasToInteractWith: {fileID: 873986661}
   result: {fileID: 0}
   particles: {fileID: 0}
 --- !u!1 &778816034
@@ -25712,6 +25910,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 261996328c86983408c8b0749a977f37, type: 3}
   m_PrefabInstance: {fileID: 818138305}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &818195915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818195916}
+  - component: {fileID: 818195919}
+  - component: {fileID: 818195918}
+  - component: {fileID: 818195917}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818195916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818195915}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.4704273, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 135033998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &818195917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818195915}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &818195918
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818195915}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7c998f05b4293b541b63cba2790678e0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &818195919
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818195915}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &818413889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f2a848fd097c2145b99df53e2fb73b7, type: 3}
@@ -26076,6 +26379,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322874602946564
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &840289803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27231,6 +27535,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322874602946563
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &862279485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27529,7 +27834,7 @@ Transform:
   - {fileID: 1663599348}
   - {fileID: 645493503}
   m_Father: {fileID: 872571154}
-  m_LocalEulerAnglesHint: {x: -90, y: 89.947, z: 5.1165395}
+  m_LocalEulerAnglesHint: {x: 0, y: 89.947, z: 0}
 --- !u!111 &873986663
 Animation:
   m_ObjectHideFlags: 0
@@ -28774,6 +29079,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &911962034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29017,11 +29323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4bb58efb0ea5ab4c81a7ffb987c7803, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9544
+      value: 1.0485
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4bb58efb0ea5ab4c81a7ffb987c7803, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6118617
+      value: -0.5264
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4bb58efb0ea5ab4c81a7ffb987c7803, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29203,6 +29509,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &926479521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29641,6 +29948,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &928375638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31726,6 +32034,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653710
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &967225696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32317,6 +32626,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &978715154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33859,6 +34169,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1030125992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34076,6 +34387,112 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1037111321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1037111322}
+  - component: {fileID: 1037111325}
+  - component: {fileID: 1037111324}
+  - component: {fileID: 1037111323}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1037111322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037111321}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0043, z: 0.0125}
+  m_LocalScale: {x: -0.0034683438, y: -0.0034683438, z: -0.0018397481}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 135033998}
+  m_Father: {fileID: 24414922}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1037111323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037111321}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1037111324
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037111321}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7c998f05b4293b541b63cba2790678e0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1037111325
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037111321}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1048904000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34480,6 +34897,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1077190561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36877,6 +37295,111 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &1099782752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099782753}
+  - component: {fileID: 1099782756}
+  - component: {fileID: 1099782755}
+  - component: {fileID: 1099782754}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099782753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099782752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0048, y: -0.0038, z: -0}
+  m_LocalScale: {x: 0.002433613, y: 0.03485454, z: 0.002433613}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 774770015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1099782754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099782752}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1099782755
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099782752}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 76c5802dcd3fc2148be23d69f0cd214d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1099782756
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099782752}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1100747562
 GameObject:
   m_ObjectHideFlags: 0
@@ -41698,6 +42221,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653857
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1172977031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42779,6 +43303,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653857
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1209691326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43131,6 +43656,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1213786270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51131,6 +51657,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653765
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1539100215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52939,6 +53466,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1575217077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58766,6 +59294,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653844
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1703636360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60496,6 +61025,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741198
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1769240305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62456,6 +62986,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322871403741189
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1859561840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62809,6 +63340,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653788
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1868271759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63161,6 +63693,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653764
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1879441871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66905,6 +67438,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653784
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &1997231083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68998,6 +69532,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653782
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &2116742552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69515,6 +70050,7 @@ MonoBehaviour:
     RefIds:
     - rid: 3976322853123653857
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!114 &2140196639
 MonoBehaviour:
   m_ObjectHideFlags: 0
