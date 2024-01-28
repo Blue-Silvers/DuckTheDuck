@@ -70,12 +70,12 @@
                 },
                 {
                     "name": "Camera",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "cc932a62-b27a-470b-b66d-cc370d9a2bf0",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -291,7 +291,7 @@
                 {
                     "name": "up",
                     "id": "ef7e6615-1854-4471-9f39-13d68caba186",
-                    "path": "<Gamepad>/rightStick/up",
+                    "path": "<Gamepad>/rightStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -302,7 +302,7 @@
                 {
                     "name": "down",
                     "id": "944f61f6-5097-4fe5-ad44-de4c6ecfd888",
-                    "path": "<Gamepad>/dpad/down",
+                    "path": "<Gamepad>/rightStick/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -311,26 +311,26 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "e6f27216-4a1c-4261-a224-42dd742676b5",
-                    "path": "<Gamepad>/dpad/left",
+                    "name": "",
+                    "id": "94f65fda-4aa4-45ae-80ca-25923905484b",
+                    "path": "<Mouse>/position/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Camera",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "right",
-                    "id": "e8aa062f-8063-4eec-924c-27818aeb311a",
-                    "path": "<Gamepad>/dpad/right",
+                    "name": "",
+                    "id": "43c59a30-7c76-4b76-aa5b-953e4bc98e73",
+                    "path": "<Mouse>/position/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Camera",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }
