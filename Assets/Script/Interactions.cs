@@ -5,12 +5,13 @@ public class Interactions : MonoBehaviour
     // Object is takeable or not.
     [SerializeField, Range(0, 1)]
     public int canBeTaken;
-    public GameObject hasToInteractWith;
 
     [SerializeField, Range(0, 3)]
     public int interactionType = 0; //0 = remove, 1 = combine , 2 = AnimationPlayer, 3 = animation + particles
 
+    public GameObject hasToInteractWith;
     public GameObject result;
+
     public ParticleSystem particles;
 
     private Rigidbody rb;
@@ -54,9 +55,9 @@ public class Interactions : MonoBehaviour
             else if (interactionType == 1)
             {
                 Debug.Log("Combining ");
-                InteractionLibrary.Combine(result);
                 InteractionLibrary.Remove(interaction);
                 InteractionLibrary.Remove(gameObject);
+                InteractionLibrary.Combine(result);
             }
             else if (interactionType == 2)
             {

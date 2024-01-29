@@ -1,6 +1,3 @@
-using System;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public static class InteractionLibrary
@@ -22,10 +19,10 @@ public static class InteractionLibrary
         Debug.Log("Animate: " + interactable.name + " and " + result.name);
         if (interactable != null) 
         { 
-            interactable.GetComponent<Animation>().Play();
+            Animation intAnim = interactable.GetComponent<Animation>();
+            intAnim.Play(intAnim.clip.name);
         }
-        result.GetComponent<Animation>().Play();
+        Animation resAnim = result.GetComponent<Animation>();
+        resAnim.Play(resAnim.clip.name);
     }
-
-
 }
