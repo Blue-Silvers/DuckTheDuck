@@ -38713,8 +38713,10 @@ MonoBehaviour:
   gameMaster: 1
   system: 0
   gameMasterDialogue:
-  - This is the library of NOM DU PERSONNAGE.
-  - You have one hour to find their nefarious plan and escape starting now.
+  - This is the library of...
+  - Did you just break the digicode ?
+  - Well that's okay it happens.
+  - You now have one hour to find out what's happpening here and escape.
   - Be quick and thoughtful.
   systemDialogue: []
   imageForGM: 0
