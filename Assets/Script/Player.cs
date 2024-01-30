@@ -81,9 +81,9 @@ public class Player : MonoBehaviour
                 if (hit.distance < 2)
                 {
                    
-                    Debug.Log("Hit: " + hit.collider.name);
-                    Debug.Log("Distance: " + hit.distance);
-                    Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
+                    //Debug.Log("Hit: " + hit.collider.name);
+                    //Debug.Log("Distance: " + hit.distance);
+                    //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow, 5f);
                     Interactions newInteraction = hit.collider.gameObject.GetComponent<Interactions>();
                     if (newInteraction != null && newInteraction.canBeTaken == 1&& inventory == null) 
                     {
