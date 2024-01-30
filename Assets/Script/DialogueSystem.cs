@@ -47,6 +47,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void GameMasterTalking(string[] gameMasterDialogue, int image, float timeToSpeak)
     {
+       
         StopAllCoroutines();
         indexGM = 0;
         gmDialogueBox.text = string.Empty;
@@ -54,7 +55,8 @@ public class DialogueSystem : MonoBehaviour
         gameMasterSprite.GetComponent<Image>().sprite = dialogueBoxes[image];
         gmText = gameMasterDialogue;
         gmTalking = true;
-        gameMasterBox.GetComponent<Animator>().SetTrigger("Up");
+        gameMasterBox.GetComponent<Animator>().SetBool("DownBool", false);
+        gameMasterBox.GetComponent<Animator>().SetBool("UpBool", true);
         StartCoroutine(Typing());
     }
 
@@ -106,9 +108,9 @@ public class DialogueSystem : MonoBehaviour
             }
             else
             {
-                indexGM++;
+                gameMasterBox.GetComponent<Animator>().SetBool("DownBool", true);
+                gameMasterBox.GetComponent<Animator>().SetBool("UpBool", false);
                 gmTalking = false;
-                gameMasterBox.GetComponent<Animator>().SetTrigger("Down");
             }
         }
         else if (systemTalking)
