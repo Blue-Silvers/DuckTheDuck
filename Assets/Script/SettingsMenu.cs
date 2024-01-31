@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -14,13 +15,16 @@ public class SettingsMenu : MonoBehaviour
     [Header("Graphics")]
     [SerializeField] private TMPro.TMP_Dropdown DropdownGraphics;
     [SerializeField] private TMPro.TMP_Dropdown DropdownResolution;
+    [SerializeField] GameObject settingsWindow;
 
     Resolution[] resolutions;
 
     [Header("Camera parameter")]
     [SerializeField] private Camera cam;
     [SerializeField] private Slider fovSlider;
-
+    [SerializeField] private Toggle funMode;
+    bool funFOV = false;
+    [SerializeField] TextMeshProUGUI fovTxt;
     [SerializeField] private Toggle screenToggle;
 
     [Header("Instance")]
@@ -45,7 +49,7 @@ public class SettingsMenu : MonoBehaviour
         soundSlider.value = soundValueForSlider;
 
         fovSlider.value = cam.fieldOfView;
-
+        fovTxt.text = " " + (int)cam.fieldOfView;
 
         //QualitySettings.GetActiveQualityLevelsForPlatform(out int qualityType);
 
@@ -73,19 +77,29 @@ public class SettingsMenu : MonoBehaviour
 
         Screen.fullScreen = true;
     }
-
     private void Update()
     {
-        if(cam.fieldOfView == fovSlider.value)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            cam.fieldOfView = fovSlider.value;
+            settingsWindow.SetActive(false);
         }
-
     }
+
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Music", volume);
+    }
+
+    public void SetFov(float fov)
+    {
+        if(funFOV == false)
+        {
+            cam.fieldOfView = fov;
+        }
+
+        fovTxt.text = " " + (int) fov;
+
     }
 
     public void SetSoundVolume(float volume)
@@ -107,5 +121,19 @@ public class SettingsMenu : MonoBehaviour
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
+    }
+
+    public void SetFunMode(bool isFullScreen)
+    {
+        if (isFullScreen == true)
+        {
+            cam.fieldOfView = 169;
+            funFOV = true;
+        }
+        else
+        {
+            cam.fieldOfView = fovSlider.value;
+            funFOV = false;
+        }
     }
 }

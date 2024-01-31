@@ -9,8 +9,18 @@ public class Timmer : MonoBehaviour
 {
     [SerializeField] private float timeToEscape = 600f;
     [SerializeField] TextMeshProUGUI timerTxt;
+    [SerializeField] GameObject gameOverScreen, outTxt, offTxt, theTimeTxt;
 
+    private void Start()
+    {
+        gameOverScreen.SetActive(false);
 
+        outTxt.SetActive(false);
+
+        offTxt.SetActive(false);
+
+        theTimeTxt.SetActive(false);
+    }
     void Update()
     {
         if(timeToEscape > 11)
@@ -33,11 +43,25 @@ public class Timmer : MonoBehaviour
         }
         else if (timeToEscape <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            StartCoroutine(OutOffTime());
             timeToEscape = 0;
         }
 
         timerTxt.text = string.Format("{00:00}:{01:00}", Mathf.FloorToInt(timeToEscape/60), Mathf.FloorToInt(timeToEscape % 60));
+    }
+
+    public IEnumerator OutOffTime()
+    {
+        gameOverScreen.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        outTxt.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        offTxt.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        theTimeTxt.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("GameOver");
+
     }
 
 }
