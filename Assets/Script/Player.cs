@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
                     Interactions newInteraction = hit.collider.gameObject.GetComponent<Interactions>();
                     if (newInteraction != null && newInteraction.canBeTaken == 1&& inventory == null) 
                     {
-                         playerRenderer.GetComponent<Animator>().SetTrigger("PunchHold");
+                        playerRenderer.GetComponent<Animator>().SetTrigger("PunchHold");
                         if (movement != new Vector2(0,0))
                         {
                             playerRenderer.GetComponent<Animator>().SetBool("WalkingHold", true);
@@ -103,7 +103,11 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        inventoryInteractions.Interact(newInteraction.gameObject);
+                        if (inventory != null)
+                        {
+                            inventoryInteractions.Interact(newInteraction.gameObject);
+                        }
+                        
                     }
                 }
                 else 
@@ -122,14 +126,18 @@ public class Player : MonoBehaviour
             playerRenderer.GetComponent<Animator>().SetBool("Item", false);
         }
 
-        if (dropObject.WasPressedThisFrame() && inventory.name != "StartingObject")
+        if (dropObject.WasPressedThisFrame() && inventory != null)
         {
-            Debug.Log("Inventory Deleted");
-            inventory.GetComponent<Collider>().enabled = true;
-            direction = cam.transform.forward;
-            Debug.Log(inventory.GetComponent<Rigidbody>().velocity = direction * strength);
-            inventory = null;
-            inventoryInteractions = null;
+            if (inventory.gameObject.name != "StartObject")
+            {
+                Debug.Log("Inventory Deleted");
+                inventory.GetComponent<Collider>().enabled = true;
+                direction = cam.transform.forward;
+                Debug.Log(inventory.GetComponent<Rigidbody>().velocity = direction * strength);
+                inventory = null;
+                inventoryInteractions = null;
+            }
+            
         }
 
         if (Input.GetKey(KeyCode.Escape))

@@ -72,5 +72,6 @@ public class Interactions : MonoBehaviour
                 Interact(interaction);
             }
         }
+
     }
 }
